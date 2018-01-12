@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">TMD Viewer</string>
+
+    <string name="error_unknown">Unknown error</string>
+
+    <string name="splash">Just some splash screen</string>
+
+    <string name="movies_empty">No movies for today</string>
+
+    <string name="menu_main_popular">Popular</string>
+    <string name="menu_main_top_rated">Top rated</string>
+
+    <string name="menu_movie_share">Share</string>
+
+    <string name="movie_share">Look what a great movie I`ve found: "$1%s"</string>
+
+    <string name="rating">Rating:</string>
+    <string name="release_date">Date:</string>
+
+    <string name="preference_file_key">ru.lempo.tmdviewer.apiconfiguration</string>
+</resources>

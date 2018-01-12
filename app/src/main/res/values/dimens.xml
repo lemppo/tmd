@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="textS">16sp</dimen>
+    <dimen name="textM">24sp</dimen>
+    <dimen name="textL">45sp</dimen>
+    <dimen name="textXL">56sp</dimen>
+
+    <dimen name="dp16">16dp</dimen>
+    <dimen name="dp8">8dp</dimen>
+    <dimen name="dp4">4dp</dimen>
+
+    <dimen name="activity_movie_rating_gap">130dp</dimen>
+</resources>

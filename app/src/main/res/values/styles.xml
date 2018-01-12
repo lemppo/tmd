@@ -1,0 +1,60 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
+
+    <!-- Text -->
+
+    <style name="Text" />
+
+    <style name="Text.Normal" parent="Text">
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="Text.Bold" parent="Text">
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="Text.Normal.S" parent="Text.Normal">
+        <item name="android:textSize">@dimen/textS</item>
+    </style>
+
+    <style name="Text.Normal.M" parent="Text.Normal">
+        <item name="android:textSize">@dimen/textM</item>
+    </style>
+
+    <style name="Text.Normal.L" parent="Text.Normal">
+        <item name="android:textSize">@dimen/textL</item>
+    </style>
+
+    <style name="Text.Normal.XL" parent="Text.Normal">
+        <item name="android:textSize">@dimen/textXL</item>
+    </style>
+
+    <style name="Text.Bold.S" parent="Text.Bold">
+        <item name="android:textSize">@dimen/textS</item>
+    </style>
+
+    <style name="Text.Bold.M" parent="Text.Bold">
+        <item name="android:textSize">@dimen/textM</item>
+    </style>
+
+    <style name="Text.Bold.L" parent="Text.Bold">
+        <item name="android:textSize">@dimen/textL</item>
+    </style>
+
+    <style name="Text.Bold.XL" parent="Text.Bold">
+        <item name="android:textSize">@dimen/textXL</item>
+    </style>
+
+    <!---->
+
+</resources>

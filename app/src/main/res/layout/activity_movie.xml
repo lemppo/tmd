@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="ru.lempo.tmdviewer.model.wrapper.MovieWrapper" />
+
+        <variable
+            name="model"
+            type="ru.lempo.tmdviewer.model.viewstate.MovieViewState" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:title="@{item.title}"
+            app:titleTextColor="@android:color/white" />
+
+        <android.support.v4.widget.ContentLoadingProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:visibleIf="@{model.isLoading()}" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:paddingLeft="@dimen/dp16"
+            android:paddingRight="@dimen/dp16">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivPoster"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginRight="@dimen/dp8"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:background="@android:color/darker_gray"
+                    app:imagePath="@{item.imagePath}"
+                    app:layout_constraintDimensionRatio="H,2:3"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/tvRatingHint"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvRatingHint"
+                    style="@style/Text.Bold.M"
+                    android:layout_width="@dimen/activity_movie_rating_gap"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp8"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:text="@string/rating"
+                    app:layout_constraintLeft_toRightOf="@+id/ivPoster"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvRating"
+                    style="@style/Text.Normal.XL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:background="@drawable/bg_black_border"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/dp4"
+                    android:paddingStart="@dimen/dp4"
+                    android:text="@{item.ratingString}"
+                    app:layout_constraintLeft_toLeftOf="@+id/tvRatingHint"
+                    app:layout_constraintRight_toRightOf="@+id/tvRatingHint"
+                    app:layout_constraintTop_toBottomOf="@+id/tvRatingHint" />
+
+                <TextView
+                    android:id="@+id/tvDateHint"
+                    style="@style/Text.Bold.M"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:text="@string/release_date"
+                    app:layout_constraintLeft_toLeftOf="@+id/tvRatingHint"
+                    app:layout_constraintRight_toRightOf="@+id/tvRatingHint"
+                    app:layout_constraintTop_toBottomOf="@+id/tvRating" />
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    style="@style/Text.Normal.M"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:background="@drawable/bg_black_border"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/dp4"
+                    android:paddingStart="@dimen/dp4"
+                    android:text="@{item.dateString}"
+                    app:layout_constraintLeft_toLeftOf="@+id/tvRatingHint"
+                    app:layout_constraintRight_toRightOf="@+id/tvRatingHint"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDateHint" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    style="@style/Text.Normal.L"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:text="@{item.title}"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivPoster" />
+
+                <TextView
+                    android:id="@+id/tvDescription"
+                    style="@style/Text.Normal.S"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp16"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:text="@{item.overview}"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+            </android.support.constraint.ConstraintLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</layout>
